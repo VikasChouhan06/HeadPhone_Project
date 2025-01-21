@@ -1,19 +1,11 @@
 # Use Tomcat 8.0.15 as the base image
-FROM tomcat:8.0.15-jre8
+FROM tomcat:8.0.15
 
-# Maintain image metadata
-LABEL maintainer="VikasChouhan06"
-
-# Set environment variables for Tomcat
-ENV CATALINA_HOME /usr/local/tomcat
-ENV PATH $CATALINA_HOME/bin:$PATH
-
-# Copy the WAR file from the local machine to the Tomcat webapps directory
-# Replace 'your-app.war' with the name of your WAR file
-COPY STQA_Project.war $CATALINA_HOME/webapps/
+# Copy the WAR file from the specified location into Tomcat's webapps directory
+COPY ./STQA_Project/dist/STQA_Project.war /usr/local/tomcat/webapps/
 
 # Expose Tomcat's default HTTP port
 EXPOSE 8080
 
-# Start Tomcat when the container runs
+# Start Tomcat
 CMD ["catalina.sh", "run"]
