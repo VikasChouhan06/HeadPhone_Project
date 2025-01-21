@@ -1,5 +1,5 @@
-# Use an official Tomcat 8.0.15 image
-FROM tomcat:8.0.15-jdk8
+# Use the latest official Tomcat 8 image with JDK 8
+FROM tomcat:8-jdk8
 
 # Remove default web applications
 RUN rm -rf /usr/local/tomcat/webapps/*
