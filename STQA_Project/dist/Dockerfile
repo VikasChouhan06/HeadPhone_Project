@@ -10,7 +10,7 @@ ENV PATH $CATALINA_HOME/bin:$PATH
 
 # Copy the WAR file from the local machine to the Tomcat webapps directory
 # Replace 'your-app.war' with the name of your WAR file
-COPY your-app.war $CATALINA_HOME/webapps/
+COPY STQA_Project.war $CATALINA_HOME/webapps/
 
 # Expose Tomcat's default HTTP port
 EXPOSE 8080
